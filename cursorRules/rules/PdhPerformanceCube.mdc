@@ -1,0 +1,33 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+### PdhPerformanceCube Table
+PdhPerformanceCube table has data aggregated from Log table. The PdhPerformanceCube table is used to store SourceMetric such as WebVitals, PageLoads and PageTimeOuts. These are the different events:
+- Sandbox.pageTimeout
+- WebVitals.FID
+- Sandbox.pageIsSlow
+- WebVitals.CLS
+- WebVitals.LCP
+- WebVitals.FCP
+- WebVitals.TTFB
+- exc.metrics.pageState.load.done
+- WebVitals.INP
+
+The PdhPerformanceCube table is used to store the data in a more structured way and to make it easier to query and analyze the data.
+
+Sample values of this table for different events are as follow:
+
+| Event                           | LogTimeStamp           | SourceMetric   | AppId                    | AppVersion           | ShellVersion         | Internal | Visibility | Region     | Country       | LoadType   | Count | PageLoadTime | ShellLoadTime | AppLoadTime | ShellHTMLTime | AppHTMLTime | ShellGraphQLTime | Vitals              | errorCode  | SampleErrorData |
+|---------------------------------|------------------------|----------------|--------------------------|----------------------|----------------------|----------|------------|------------|---------------|------------|-------|--------------|----------------|-------------|----------------|-------------|-------------------|----------------------|------------|------------------|
+| Sandbox.pageTimeout            | 2025-04-07T22:00:00Z   | PageTimeOuts   | floodgateFeatureFlags    |                      | stage20250407200644 | TRUE     | visible    |            | United States |            | 1     |              |                |             |                |             |                   |                      | 408-001m   | {...}            |
+| WebVitals.FID                  | 2025-04-10T06:00:00Z   | WebVitals      | adobe.developer.console  |                      | 0.0.0                |          | visible    |            |               |            | 1     |              |                |             |                |             |                   | [[12],[1],[1]]       |            |                  |
+| Sandbox.pageIsSlow            | 2025-04-10T10:00:00Z   | PageTimeOuts   | experiencePlatformUI-home|                      | stage20250409235019 | FALSE    | visible    |            | United States |            | 1     |              |                |             |                |             |                   |                      | 408-001e   | {...}            |
+| WebVitals.CLS                 | 2025-04-10T10:00:00Z   | WebVitals      | ContentHub               |                      | stage20250410073541 | TRUE     | hidden     |            | India         |            | 1     |              |                |             |                |             |                   | [[12],["0.046..."],[1]] |            |                  |
+| WebVitals.LCP                 | 2025-04-10T10:00:00Z   | WebVitals      | marketoEngage            |                      | undefined            |          | visible    |            |               |            | 1     |              |                |             |                |             |                   | [[12],[13989],[1]]   |            |                  |
+| WebVitals.FCP                 | 2025-04-10T10:00:00Z   | WebVitals      | aem-home-ui              |                      | stage20250409235019 | TRUE     | visible    |            | France        |            | 1     |              |                |             |                |             |                   | [[12],[628],[1]]     |            |                  |
+| WebVitals.TTFB                | 2025-04-10T10:00:00Z   | WebVitals      | aem-home-ui              |                      | stage20250409235019 | TRUE     | visible    |            | France        |            | 1     |              |                |             |                |             |                   | [[12],[107.5],[1]]   |            |                  |
+| exc.metrics.pageState.load.done| 2025-04-10T10:00:00Z   | PageLoads      | GenStudio                | stage20250410085304 | stage20250409235019 |          | visible    | aus5-njs   |               | post-login | 1     | [[7],[6940],[1]] | [[7],[1934],[1]] | [[7],[5275],[1]] | [[7],[19],[1]] | [[7],[66],[1]] | [[7],[1669],[1]]   |                      |            |                  |
+| WebVitals.INP                 | 2025-04-10T10:00:00Z   | WebVitals      | firefly                  |                      | undefined            | TRUE     | hidden     |            | India         |            | 1     |              |                |             |                |             |                   | [[12],[200],[1]]     |            |                  |
