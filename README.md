@@ -1,5 +1,3 @@
-This is a fork of https://github.com/pab1it0/adx-mcp-server and relevant changes have been made to support the Adobe internal environment.
-
 # Azure Data Explorer MCP Server
 
 <a href="https://glama.ai/mcp/servers/1yysyd147h">
