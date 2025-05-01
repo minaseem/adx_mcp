@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import sys
 import dotenv
+import signal
 from adx_mcp_server.server import mcp, config
 from mcp.server.fastmcp import FastMCP
 
@@ -43,4 +44,10 @@ def run_server():
     mcp.run(transport="sse")
 
 if __name__ == "__main__":
+    # Handle graceful shutdown on Ctrl+C (SIGINT)
+    def shutdown_signal_handler(signal, frame):
+        print("Shutting down server...")
+        sys.exit(0)
+
+    signal.signal(signal.SIGINT, shutdown_signal_handler)
     run_server()
