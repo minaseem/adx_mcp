@@ -11,7 +11,7 @@ from azure.identity import ClientSecretCredential
 from azure.kusto.data import KustoClient, KustoConnectionStringBuilder
 
 dotenv.load_dotenv()
-mcp = FastMCP("Azure Data Explorer MCP", host="0.0.0.0", port=3001)
+mcp = FastMCP("Azure Data Explorer MCP")
 
 @dataclass
 class ADXConfig:

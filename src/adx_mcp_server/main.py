@@ -25,7 +25,7 @@ def setup_environment():
     print(f"Azure Data Explorer configuration:")
     print(f"  Cluster: {config.cluster_url}")
     print(f"  Database: {config.database}")
-    print(f"  Authentication: Using DefaultAzureCredential")
+    print(f"  Authentication: Using ClientSecretCredential")
 
     return True
 
