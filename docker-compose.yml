@@ -3,6 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
     environment:
       - ADX_CLUSTER_URL=${ADX_CLUSTER_URL}
       - ADX_DATABASE=${ADX_DATABASE}

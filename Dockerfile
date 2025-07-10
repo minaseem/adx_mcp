@@ -36,6 +36,9 @@ ENV PATH="/app/.venv/bin:$PATH"
 # Set environment variables for ADX MCP Server
 ENV PYTHONUNBUFFERED=1
 
+# Expose port 8000 for FastMCP SSE transport
+EXPOSE 8000
+
 # when running the container, add ADX_CLUSTER_URL and ADX_DATABASE environment variables
 ENTRYPOINT ["adx-mcp-server"]
 
