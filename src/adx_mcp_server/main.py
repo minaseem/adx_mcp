@@ -36,10 +36,10 @@ def run_server():
         sys.exit(1)
 
     print("\nStarting Azure Data Explorer MCP Server...")
-    print("Running server in standard mode...")
+    print("Running server with SSE transport on 0.0.0.0:8000...")
 
-    # Run the server with the SSE transport, binding to all interfaces
-    mcp.run(transport="sse", host="0.0.0.0", port=8000)
+    # Run the server with SSE transport
+    mcp.run(transport="sse")
 
 if __name__ == "__main__":
     # Handle graceful shutdown on Ctrl+C (SIGINT)
